@@ -1,0 +1,331 @@
+@import url("styles.css");
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+}
+
+.bar {
+  width: 10vw;
+  height: 105vh;
+  background: var(--cor-destaque);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "logo"
+    "form";
+  grid-template-rows: 0.75fr 1.25fr;
+  height: 100vh;
+  width: 100%;
+}
+
+.loginLogo {
+  grid-area: logo;
+}
+
+.loginLogo__alinhamento {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
+}
+
+.logo {
+  width: 40vw;
+  margin-bottom: 10px;
+}
+
+.loginLogo__alinhamento__texto {
+  display: none;
+}
+
+#formLogin {
+  grid-area: form;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+#formLogin .mobile-tablet {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px;
+}
+
+#formLogin .desktop {
+  display: none;
+}
+
+.formLogin__textField {
+  border: 2px solid black;
+  width: 70vw;
+  border-radius: 10px;
+  display: flex;
+  padding: 10px;
+  margin: 15px;
+  background-color: var(--cor-intermediaria);
+}
+
+.formLogin__textField span {
+  border-right: 2px solid black;
+  padding: 0 5px 0 0;
+  margin-right: 5px;
+}
+
+.formLogin__textField input[type="email"],
+.formLogin__textField input[type="password"] {
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  width: 70vw;
+}
+
+.formLogin__textField input[type="email"]::placeholder,
+.formLogin__textField input[type="password"]::placeholder {
+  color: black;
+  font-size: 1rem;
+}
+
+.formLogin__textField input[type="email"]:focus,
+.formLogin__textField input[type="password"]:focus {
+  outline: none;
+}
+
+.formLogin__links {
+  width: 80vw;
+  text-align: end;
+  margin-right: 35px;
+}
+
+.formLogin__links a {
+  font-weight: 700;
+}
+
+.formLogin__links a,
+.formLogin__links p {
+  color: var(--cor-destaque);
+  font-size: 0.75rem;
+}
+
+#btEntrar {
+  all: unset;
+  background-color: var(--cor-destaque);
+  font-weight: 600;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: 45vw;
+  text-align: center;
+  margin: 15px;
+  border: 2px solid black;
+  font-size: 1.125rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@media screen and (min-width: 641px) {
+  .loginLogo {
+    background-color: var(--cor-fundo);
+  }
+
+  .loginLogo__alinhamento {
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .logo {
+    width: 30vw;
+  }
+
+  .loginLogo__alinhamento__texto {
+    display: flex;
+    flex-flow: column;
+    text-align: end;
+  }
+
+  .loginLogo__alinhamento__texto .tablet {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin: 10px;
+  }
+
+  .loginLogo__alinhamento__texto .desktop {
+    display: none;
+  }
+
+  .loginLogo__alinhamento__texto p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px;
+  }
+
+  .loginLogo__alinhamento__texto a {
+    background: var(--cor-gradiente);
+    padding: 10px;
+    border-radius: 15px;
+    border: 4px solid var(--cor-destaque);
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+    font-weight: 700;
+    width: 25vw;
+    text-align: center;
+    align-self: self-end;
+    margin-top: 15px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.219);
+  }
+
+  .loginLogo__alinhamento__texto a:hover {
+    transform: scale(1.1);
+    transition: all 0.2s;
+  }  
+
+  .formLogin__textField {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0px black;
+  }
+
+  .formLogin__textField input[type="email"],
+  .formLogin__textField input[type="password"] {
+    font-size: 1.25rem;
+  }
+
+  .formLogin__textField input[type="email"]::placeholder,
+  .formLogin__textField input[type="password"]::placeholder {
+    font-size: 1.25rem;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    font-size: 32px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  #btEntrar {
+    padding: 20px;
+    box-shadow: 5px 5px 0px black;
+  }
+
+  #btEntrar:hover {
+    transform: scale(1.1);
+    transition: all 0.2s;
+  }
+
+  .formLogin__links a {
+    font-size: 0.875rem;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  main {
+    grid-template-areas:
+      "logo form"
+      "logo form";
+    grid-template-columns: 0.8fr 1.2fr;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .loginLogo {
+    height: 100%;
+  }
+
+  .loginLogo__alinhamento {
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;
+  }
+
+  .loginLogo__alinhamento__texto {
+    text-align: center;
+    margin-bottom: 5vh;
+    margin-top: 27vh;
+  }
+
+  .loginLogo__alinhamento__texto .tablet {
+    display: none;
+  }
+
+  .loginLogo__alinhamento__texto .desktop {
+    display: block;
+    order: 1;
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  .loginLogo__alinhamento__texto p {
+    order: 2;
+  }
+
+  .loginLogo__alinhamento__texto a {
+    align-self: center;
+    padding: 15px;
+    order: 3;
+  }
+
+  .logo {
+    order: 4;
+    margin: auto;
+    width: 20vw;
+  }
+
+  #formLogin {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #formLogin .mobile-tablet {
+    display: none;
+  }
+
+  #formLogin .desktop {
+    display: block;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .formLogin__textField {
+    width: 30vw;
+    border: 3px solid black;
+  }
+
+  .formLogin__textField span {
+    border-right: 3px solid black;
+  }
+
+  #btEntrar {
+    width: 25vw;
+    border: 3px solid black;
+  }
+
+  .formLogin__links {
+    width: 32vw;
+    margin-right: 0;
+  }
+
+  .formLogin__links a {
+    font-size: 1rem;
+  }
+}
