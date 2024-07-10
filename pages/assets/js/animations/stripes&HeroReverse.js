@@ -5,7 +5,7 @@ gsap.to(".bar", 1.5, {
   delay: 0.5,
   height: 0,
   stagger: {
-    amount: 0.5,
+    amount: -0.5,
     y: screenHeight,
   },
   ease: "power4.inOut",
