@@ -84,6 +84,7 @@ main {
   margin-right: 5px;
 }
 
+
 .formLogin__textField input[type="email"],
 .formLogin__textField input[type="password"] {
   border: none;
