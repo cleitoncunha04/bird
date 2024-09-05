@@ -64,6 +64,11 @@ main {
   margin: 20px;
 }
 
+.formulario__mensagem-erro {
+  color: #cd1e1e;
+  font-weight: bold;
+}
+
 .formLogin__textField {
   border: 2px solid black;
   width: 70vw;
@@ -80,22 +85,23 @@ main {
   margin-right: 5px;
 }
 
-.formLogin__textField input[type="email"],
-.formLogin__textField input[type="password"] {
+span.eye-password {
+  border: none !important;
+}
+
+.formLogin__textField .formLogin__textField__input {
   border: none;
   background-color: transparent;
   font-weight: 600;
   width: 70vw;
 }
 
-.formLogin__textField input[type="email"]::placeholder,
-.formLogin__textField input[type="password"]::placeholder {
+.formLogin__textField .formLogin__textField__input::placeholder {
   color: black;
   font-size: 1rem;
 }
 
-.formLogin__textField input[type="email"]:focus,
-.formLogin__textField input[type="password"]:focus {
+.formLogin__textField .formLogin__textField__input:focus {
   outline: none;
 }
 
@@ -193,7 +199,11 @@ main {
   .loginLogo__alinhamento__texto a:hover {
     transform: scale(1.1);
     transition: all 0.2s;
-  }  
+  }
+
+  .formulario__mensagem-erro {
+    font-size: 1.5rem;
+  }
 
   .formLogin__textField {
     padding: 20px;
@@ -201,13 +211,11 @@ main {
     box-shadow: 5px 5px 0px black;
   }
 
-  .formLogin__textField input[type="email"],
-  .formLogin__textField input[type="password"] {
+  .formLogin__textField .formLogin__textField__input {
     font-size: 1.25rem;
   }
 
-  .formLogin__textField input[type="email"]::placeholder,
-  .formLogin__textField input[type="password"]::placeholder {
+  .formLogin__textField .formLogin__textField__input::placeholder {
     font-size: 1.25rem;
   }
 
@@ -305,6 +313,10 @@ main {
     font-weight: 700;
     text-align: center;
     margin: 20px;
+  }
+
+  .formulario__mensagem-erro {
+    font-size: 1.7rem;
   }
 
   .formLogin__textField {

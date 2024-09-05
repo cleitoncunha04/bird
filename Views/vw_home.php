@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./assets/images/bird-logo.ico"
+      href="../public/assets/images/bird-logo.ico"
       type="image/x-icon"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="./assets/css/home.css" />
+    <link rel="stylesheet" href="../public/assets/css/home.css" />
     <title>Home</title>
   </head>
   <body>
