@@ -20,6 +20,7 @@ readonly class UserRepository implements RepositoryInterface
         return $this->pdo->prepare($sqlQuery);
     }
 
+    /** @return User[]*/
     private function hydrateUsers(PDOStatement $statement): array
     {
         return array_map(function ($user) {
@@ -51,6 +52,39 @@ readonly class UserRepository implements RepositoryInterface
         $statement->execute();
 
         return $this->hydrateUsers($statement);
+    }
+
+    public function findByEmail(string $email): array
+    {
+        $statement = $this->preparedStatment("SELECT * FROM users WHERE user_email = :email");
+
+        $statement->bindValue(':email', $email, PDO::PARAM_STR);
+
+        $statement->execute();
+
+        return $this->hydrateUsers($statement);
+    }
+
+    public function isValidEmail(string $email): bool
+    {
+        $statement = $this->preparedStatment("SELECT * FROM valid_emails WHERE valid_email_email = :email");
+
+        $statement->bindValue(':email', $email);
+
+        $statement->execute();
+
+        return $statement->rowCount() === 1;
+    }
+
+    public function isUserAlreadyRegistered(string $email): bool
+    {
+        $statement = $this->preparedStatment("SELECT * FROM users WHERE user_email = :email");
+
+        $statement->bindValue(':email', $email);
+
+        $statement->execute();
+
+        return $statement->rowCount() === 1;
     }
 
     private function addUser(User $user): bool

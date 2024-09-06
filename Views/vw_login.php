@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="/assets/css/login.css"/>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    <!--<script src="/assets/js/animations/stripes&Hero.js" defer></script>-->
-    <!--<script src="./assets/js/alertDialog.js" defer></script>-->
+    <script src="/assets/js/animations/stripes&Hero.js" defer></script>
+    <script src="./assets/js/alertDialog.js" defer></script>
     <script src="/assets/js/eye-password.js" defer></script>
     <title>Login</title>
 </head>
 <body>
-<!--<div class="overlay">
+<div class="overlay">
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
@@ -33,7 +33,7 @@
     <div class="bar"></div>
     <div class="bar"></div>
 </div>
--->
+
 <main>
     <div class="loginLogo">
         <div class="loginLogo__alinhamento">
@@ -46,14 +46,24 @@
                 <h2 class="tablet">Não possui uma conta?</h2>
                 <h2 class="desktop">Criar conta</h2>
                 <p>Tenha acesso a Base Institucional de Recursos Didáticos</p>
-                <a href="/singup">Registre-se</a>
+                <a href="/signup">Registre-se</a>
             </div>
         </div>
     </div>
 
-    <form action="#" id="formLogin">
+    <form id="formLogin" method="post">
         <h1 class="mobile-tablet">Login</h1>
         <h1 class="desktop">Já possui uma conta?</h1>
+
+        <?php if (isset($_SESSION['error_message'])) : ?>
+
+            <h2 class="formulario__mensagem-erro">
+                <?php echo $_SESSION['error_message'];
+
+                unset($_SESSION['error_message']) ?>
+            </h2>
+
+        <?php endif; ?>
 
         <div class="formLogin__textField">
             <span class="material-symbols-outlined">mail</span>
@@ -79,7 +89,7 @@
                     data-password="true"
             />
 
-            <span class="material-symbols-outlined eye-password">visibility</span>
+            <span class="material-symbols-outlined eye-password">visibility_off</span>
         </div>
 
         <div class="formLogin__links"><a href="#">Recuperar conta...</a></div>
@@ -87,7 +97,7 @@
         <input type="submit" value="Entrar" id="btEntrar"/>
 
         <div class="formLogin__links mobile">
-            <p>Não possui uma conta? <a href="/singup">Crie aqui...</a></p>
+            <p>Não possui uma conta? <a href="/signup">Crie aqui...</a></p>
         </div>
     </form>
 </main>

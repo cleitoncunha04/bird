@@ -50,14 +50,14 @@ main {
   display: none;
 }
 
-#formLogin {
+#formCadastro {
   grid-area: form;
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
-#formLogin h1 {
+#formCadastro h1 {
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
@@ -69,7 +69,7 @@ main {
   font-weight: bold;
 }
 
-.formLogin__textField {
+.formCadastro__textField {
   border: 2px solid black;
   width: 70vw;
   border-radius: 10px;
@@ -79,7 +79,7 @@ main {
   background-color: var(--cor-intermediaria);
 }
 
-.formLogin__textField span {
+.formCadastro__textField span {
   border-right: 2px solid black;
   padding: 0 5px 0 0;
   margin-right: 5px;
@@ -89,34 +89,34 @@ span.eye-password {
   border: none !important;
 }
 
-.formLogin__textField .formLogin__textField__input {
+.formCadastro__textField .formCadastro__textField__input {
   border: none;
   background-color: transparent;
   font-weight: 600;
   width: 70vw;
 }
 
-.formLogin__textField .formLogin__textField__input::placeholder {
+.formCadastro__textField .formCadastro__textField__input::placeholder {
   color: black;
   font-size: 1rem;
 }
 
-.formLogin__textField .formLogin__textField__input:focus {
+.formCadastro__textField .formCadastro__textField__input:focus {
   outline: none;
 }
 
-.formLogin__links {
+.formCadastro__links {
   width: 80vw;
   text-align: end;
   margin-right: 35px;
 }
 
-.formLogin__links a {
+.formCadastro__links a {
   font-weight: 700;
 }
 
-.formLogin__links a,
-.formLogin__links p {
+.formCadastro__links a,
+.formCadastro__links p {
   color: var(--cor-destaque);
   font-size: 0.75rem;
 }
@@ -205,17 +205,17 @@ span.eye-password {
     font-size: 1.5rem;
   }
 
-  .formLogin__textField {
+  .formCadastro__textField {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 5px 5px 0px black;
   }
 
-  .formLogin__textField .formLogin__textField__input {
+  .formCadastro__textField .formCadastro__textField__input {
     font-size: 1.25rem;
   }
 
-  .formLogin__textField .formLogin__textField__input::placeholder {
+  .formCadastro__textField__textField .formCadastro__textField__input::placeholder {
     font-size: 1.25rem;
   }
 
@@ -224,7 +224,7 @@ span.eye-password {
     font-size: 32px;
   }
 
-  #formLogin h1 {
+  #formCadastro h1 {
     font-size: 4rem;
   }
 
@@ -240,7 +240,7 @@ span.eye-password {
     transition: all 0.2s;
   }
 
-  .formLogin__links a {
+  .formCadastro__links a {
     font-size: 0.875rem;
   }
 
@@ -303,12 +303,12 @@ span.eye-password {
     width: 20vw;
   }
 
-  #formLogin {
+  #formCadastro {
     width: 100%;
     justify-content: center;
   }
 
-  #formLogin h1 {
+  #formCadastro h1 {
     display: block;
     font-weight: 700;
     text-align: center;
@@ -319,12 +319,12 @@ span.eye-password {
     font-size: 1.7rem;
   }
 
-  .formLogin__textField {
+  .formCadastro__textField {
     width: 30vw;
     border: 3px solid black;
   }
 
-  .formLogin__textField span {
+  .formCadastro__textField span {
     border-right: 3px solid black;
   }
 
@@ -333,12 +333,12 @@ span.eye-password {
     border: 3px solid black;
   }
 
-  .formLogin__links {
+  .formCadastro__links {
     width: 32vw;
     margin-right: 0;
   }
 
-  .formLogin__links a {
+  .formCadastro__links a {
     font-size: 1rem;
   }
 }

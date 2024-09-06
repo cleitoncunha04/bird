@@ -23,7 +23,7 @@ if(screenWidth > 1007) {
     ease: "power4.inOut",
   });
   
-  gsap.from("#formLogin", 2, {
+  gsap.from("#formCadastro", 2, {
     delay: 1.5,
     y: -700,
     stagger: {
@@ -38,7 +38,7 @@ if(screenWidth > 1007) {
 
 //mobile e tablet
 else {
-  gsap.from("#formLogin", 1.5, {
+  gsap.from("#formCadastro", 1.5, {
     delay: 1,
     y: -700,
     stagger: {

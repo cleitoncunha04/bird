@@ -68,6 +68,11 @@ main {
   display: none;
 }
 
+.formulario__mensagem-erro {
+  color: #cd1e1e;
+  font-weight: bold;
+}
+
 .formLogin__textField {
   border: 2px solid black;
   width: 70vw;
@@ -193,7 +198,11 @@ span.eye-password {
   .loginLogo__alinhamento__texto a:hover {
     transform: scale(1.1);
     transition: all 0.2s;
-  }  
+  }
+
+  .formulario__mensagem-erro {
+    font-size: 1.5rem;
+  }
 
   .formLogin__textField {
     padding: 20px;
@@ -303,6 +312,10 @@ span.eye-password {
     font-weight: 700;
     text-align: center;
     margin: 20px;
+  }
+
+  .formulario__mensagem-erro {
+    font-size: 1.7rem;
   }
 
   .formLogin__textField {

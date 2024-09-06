@@ -3,7 +3,6 @@
 use Cleitoncunha\Bird\Model\ConnectionFactory;
 use DI\ContainerBuilder;
 use League\Plates\Engine;
-use Psr\Container\ContainerInterface;
 
 $builder = new ContainerBuilder();
 

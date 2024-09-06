@@ -2,17 +2,19 @@
 
 @import url('reset.css');
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
-  box-sizing: border-box;
-  overflow-x: hidden;
-  --cor-fundo: #E4E4E4;
-  --cor-destaque: #154324;
-  --cor-intermediaria: #EEE5E9;
-  --cor-gradiente: linear-gradient(180deg, rgba(135,225,116,1) 0%, rgba(135,225,116,1) 0%, rgba(255,255,255,1) 100%);
-  --fonte: 'Montserrat', Arial, sans-serif;
+    --cor-fundo: #E4E4E4;
+    --cor-destaque: #154324;
+    --cor-intermediaria: #a6a3a3;
+    --cor-gradiente: linear-gradient(180deg, rgba(135, 225, 116, 1) 0%, rgba(135, 225, 116, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    --fonte: 'Montserrat', Arial, sans-serif;
 }
 
 body {
-  height: 100vh;
-  font-family: var(--fonte);
+    height: 100vh;
+    font-family: var(--fonte), sans-serif;
 }

@@ -1,14 +1,18 @@
 <?php
 
 
-use Cleitoncunha\Bird\Controller\LoginController;
-use Cleitoncunha\Bird\Controller\LoginFormController;
-use Cleitoncunha\Bird\Controller\SingupController;
-use Cleitoncunha\Bird\Controller\SingupFormController;
+use Cleitoncunha\Bird\Controller\{DisciplineController,
+    DisciplineListController,
+    LoginController,
+    LoginFormController,
+    SignupController,
+    SignupFormController};
 
 return [
     'GET|/login' => LoginFormController::class,
     'POST|/login' => LoginController::class,
-    'GET|/singup' => SingupFormController::class,
-    'POST|/singup' => SingupController::class,
+    'GET|/signup' => SignupFormController::class,
+    'POST|/signup' => SignupController::class,
+    'GET|/' => DisciplineListController::class,
+    'POST|/' => DisciplineController::class,
 ];

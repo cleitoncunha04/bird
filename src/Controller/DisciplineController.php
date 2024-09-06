@@ -7,9 +7,9 @@ use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function array_key_exists;
 
-readonly class SingupFormController implements RequestHandlerInterface
+
+readonly class DisciplineController implements RequestHandlerInterface
 {
     public function __construct(
         private Engine $templates
@@ -19,6 +19,6 @@ readonly class SingupFormController implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return new Response(status: 302, body: $this->templates->render('vw_singup'));
+        return new Response(status: 302, body: $this->templates->render('vw_home'));
     }
 }

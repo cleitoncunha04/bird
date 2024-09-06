@@ -31,7 +31,7 @@ session_start();
 
 session_regenerate_id(true);
 
-$isAuthRoute = in_array($pathInfo, ['/login', '/singup']);
+$isAuthRoute = in_array($pathInfo, ['/login', '/signup']);
 
 if (!array_key_exists('logged', $_SESSION) && !$isAuthRoute) {
     header('Location: /login');

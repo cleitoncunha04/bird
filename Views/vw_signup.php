@@ -12,15 +12,15 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link rel="stylesheet" href="/assets/css/singup.css"/>
+    <link rel="stylesheet" href="/assets/css/signup.css"/>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-    <!--<script src="/assets/js/animations/stripes&HeroReverse.js" defer></script>-->
+    <script src="/assets/js/animations/stripes&HeroReverse.js" defer></script>
     <script src="/assets/js/eye-password.js" defer></script>
     <title>Cadastro</title>
 </head>
 <body>
-<!--<div class="overlay">
+<div class="overlay">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
@@ -31,7 +31,7 @@
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
-</div>-->
+</div>
 
 <main>
     <div class="loginLogo">
@@ -50,20 +50,10 @@
         </div>
     </div>
 
-    <form id="formLogin" method="post">
+    <form id="formCadastro" method="post">
         <h1>Criar conta</h1>
 
-        <?php if (isset($_SESSION['error_message'])) : ?>
-
-            <h2 class="formulario__mensagem-erro">
-                <?php echo $_SESSION['error_message'];
-
-                unset($_SESSION['error_message']) ?>
-            </h2>
-
-        <?php endif; ?>
-
-        <div class="formLogin__textField">
+        <div class="formCadastro__textField">
             <span class="material-symbols-outlined">person</span>
 
             <input
@@ -71,12 +61,12 @@
                     name="username"
                     placeholder="Informe seu usuário..."
                     id="idUsername"
-                    class="formLogin__textField__input"
+                    class="formCadastro__textField__input"
                     required
             />
         </div>
 
-        <div class="formLogin__textField">
+        <div class="formCadastro__textField">
             <span class="material-symbols-outlined">mail</span>
 
             <input
@@ -84,12 +74,12 @@
                     name="email"
                     placeholder="Informe seu e-mail..."
                     id="idEmail"
-                    class="formLogin__textField__input"
+                    class="formCadastro__textField__input"
                     required
             />
         </div>
 
-        <div class="formLogin__textField">
+        <div class="formCadastro__textField">
             <span class="material-symbols-outlined">lock</span>
 
             <input
@@ -97,15 +87,15 @@
                     name="password"
                     placeholder="Informe sua senha..."
                     id="idSenha"
-                    class="formLogin__textField__input"
+                    class="formCadastro__textField__input"
                     data-password="true"
                     required
             />
 
-            <span class="material-symbols-outlined eye-password">visibility</span>
+            <span class="material-symbols-outlined eye-password">visibility_off</span>
         </div>
 
-        <div class="formLogin__textField">
+        <div class="formCadastro__textField">
             <span class="material-symbols-outlined">lock</span>
 
             <input
@@ -113,17 +103,17 @@
                     name="confirmPassword"
                     placeholder="Confirme sua senha..."
                     id="idSenhaConfirmada"
-                    class="formLogin__textField__input"
+                    class="formCadastro__textField__input"
                     data-password="true"
                     required
             />
 
-            <span class="material-symbols-outlined eye-password">visibility</span>
+            <span class="material-symbols-outlined eye-password">visibility_off</span>
         </div>
 
         <input type="submit" value="Registre-se" id="btCadastro"/>
 
-        <div class="formLogin__links mobile">
+        <div class="formCadastro__links mobile">
             <p>Já possui uma conta? <a href="/login">Entre aqui...</a></p>
         </div>
     </form>

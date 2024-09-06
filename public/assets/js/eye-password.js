@@ -8,10 +8,10 @@ $spanEye.forEach((eye, index) => {
         isVisible = !isVisible;
 
         if (isVisible) {
-            eye.innerText = "visibility_off";
+            eye.innerText = "visibility";
             $inputPassword[index].setAttribute("type", "text");
         } else {
-            eye.innerText = "visibility";
+            eye.innerText = "visibility_off";
             $inputPassword[index].setAttribute("type", "password");
         }
     });
