@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script src="/assets/js/animations/stripes&HeroReverse.js" defer></script>
-    <script src="/assets/js/eye-password.js" defer></script>
+    <script src="/assets/js/widgets/eyePassword.js" defer></script>
     <title>Cadastro</title>
 </head>
 <body>

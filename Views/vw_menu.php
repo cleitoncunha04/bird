@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
           integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <script src="/assets/js/menu.js" defer></script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+
+    <script src="/assets/js/widgets/drawerMenu.js" defer></script>
+    <script src="/assets/js/events/drawerMenuEvent.js" defer></script>
+
     <title>BIRD</title>
 </head>
 <body>
@@ -18,22 +23,22 @@
 <nav id="sidebar">
     <div class="sidebar_content">
         <div id="user">
-            <img src="/assets/images/bird-logo.png" alt="Avatar" id="user_avatar">
+            <img src="/assets/images/perfil-img.png" alt="Avatar" id="user_avatar">
 
             <p id="user__infos">
                     <span class="item-description">
                         Cleiton Cunha
                     </span>
 
-                    <span class="item-description">
-                        Lorem Ipsum
+                <span class="item-description">
+                        Professor
                     </span>
             </p>
         </div>
 
         <ul id="side_items">
             <li class="side-item">
-                <a href="#">
+                <a href="coxinha">
                     <i class="fa-solid fa-magnifying-glass"></i>
 
                     <span class="item-description">
@@ -43,7 +48,7 @@
             </li>
 
             <li class="side-item active">
-                <a href="#">
+                <a href="http://localhost:8080/">
                     <i class="fa-solid fa-house"></i>
 
                     <span class="item-description">
@@ -53,7 +58,7 @@
             </li>
 
             <li class="side-item">
-                <a href="#">
+                <a href="http://localhost:8080/topics">
                     <i class="fa-solid fa-book"></i>
 
                     <span class="item-description">
@@ -63,7 +68,7 @@
             </li>
 
             <li class="side-item">
-                <a href="#">
+                <a href="coxinha">
                     <i class="fa-solid fa-user"></i>
 
                     <span class="item-description">

@@ -13,7 +13,7 @@ body {
 }
 
 main {
-    padding: 20px 38px;
+    padding: 20px;
     padding-left: calc(82px + 38px);
     min-height: 100vh;
     position: fixed;
@@ -40,6 +40,7 @@ main {
 #user {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     margin-bottom: 24px;
 }
@@ -75,6 +76,7 @@ main {
     padding: 14px;
     cursor: pointer;
     border-radius: 8px;
+    transition: transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 .side-item.active {
@@ -86,7 +88,7 @@ main {
 }
 
 .side-item:hover:not(.active), #logout_btn:hover {
-    background: #d6dcd6;
+    background: #bbc1bb;
 }
 
 .side-item a {
@@ -105,11 +107,12 @@ main {
 }
 
 #logout {
-    border-top: 1px solid var(--cor-intermediaria);
+    border-top: 1px solid #aaaaaa;
     padding: 12px;
 }
 
 #logout_btn {
+    align-self: center;
     border: none;
     padding: 12px;
     font-size: 0.875rem;
@@ -124,7 +127,6 @@ main {
 
 #logout_btn i {
     color: #5e5e5e;
-    margin-left: 18px;
 }
 
 #open_btn {
@@ -149,13 +151,13 @@ main {
 }
 
 .item-description {
-    width: 0px;
+    width: 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 0.875rem;
     transition: width 0.6s;
-    height: 0px;
+    height: 0;
 }
 
 #sidebar.open-sidebar {

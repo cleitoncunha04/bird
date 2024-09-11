@@ -13,11 +13,12 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="/assets/css/login.css"/>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script src="/assets/js/animations/stripes&Hero.js" defer></script>
-    <script src="./assets/js/alertDialog.js" defer></script>
-    <script src="/assets/js/eye-password.js" defer></script>
+    <script src="/assets/js/widgets/eyePassword.js" defer></script>
+
     <title>Login</title>
 </head>
 <body>

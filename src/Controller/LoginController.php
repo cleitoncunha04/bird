@@ -9,6 +9,7 @@ use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use function sleep;
 
 readonly class LoginController implements RequestHandlerInterface
 {
@@ -44,6 +45,8 @@ readonly class LoginController implements RequestHandlerInterface
             }
 
             $_SESSION['logged'] = true;
+
+            sleep(1);
 
             return new Response(302, ['Location' => '/']);
         }

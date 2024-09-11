@@ -8,7 +8,7 @@ use PDO;
 use PDOStatement;
 use function array_map;
 
-readonly class FileRepositoryInterface implements RepositoryInterface
+readonly class FileRepository implements RepositoryInterface
 {
     public function __construct(
         private PDO $pdo,

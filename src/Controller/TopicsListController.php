@@ -8,8 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-
-readonly class DisciplineController implements RequestHandlerInterface
+readonly class TopicsListController implements RequestHandlerInterface
 {
     public function __construct(
         private Engine $templates
@@ -17,8 +16,9 @@ readonly class DisciplineController implements RequestHandlerInterface
     {
     }
 
+
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return new Response(status: 302, body: $this->templates->render('vw_home'));
+        return new Response(status: 302, body: $this->templates->render('vw_topics'));
     }
 }

@@ -7,9 +7,9 @@
 }
 
 :root {
-    --cor-fundo: #E4E4E4;
+    --cor-fundo: #d9d9d9;
     --cor-destaque: #154324;
-    --cor-intermediaria: #a6a3a3;
+    --cor-intermediaria: #EEE5E9;
     --cor-gradiente: linear-gradient(180deg, rgba(135, 225, 116, 1) 0%, rgba(135, 225, 116, 1) 0%, rgba(255, 255, 255, 1) 100%);
     --fonte: 'Montserrat', Arial, sans-serif;
 }

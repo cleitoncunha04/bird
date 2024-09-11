@@ -1,0 +1,118 @@
+@import "styles.css";
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+
+.container__title {
+    padding: 2em 0 0.5em 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.topics__list {
+    margin-top: 20px;
+    background: var(--cor-intermediaria);
+    border: 3px solid #5e5e5e;
+    border-radius: 10px 5px;
+    box-shadow:  5px 5px 10px #c1c1c1;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.topics__list-title {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #5e5e5e;
+    font-weight: 600;
+    color: #434343;
+    font-size: 1rem;
+}
+
+.material-symbols-outlined {
+    border-radius: 50% !important;
+    border: 1px solid #5e5e5e !important;
+}
+
+.topics__list-title::after {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/close_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg");
+    transform: rotate(45deg);
+    transition: 0.25s;
+}
+
+.topics__list-title.active::after {
+    transform: rotate(0deg);
+}
+
+.topics__list-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+.topics__list-content > div {
+    padding: 30px;
+}
+
+.topics__list-content.active {
+    max-height: 1200px;
+}
+
+.topics__list-content__items {
+    list-style: circle;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content-item {
+    padding: 10px 0;
+}
+
+@media screen and (min-width: 641px) {
+    .container__title {
+        font-size: 1.5rem;
+    }
+
+    .topics__list {
+        width: 70vw;
+        font-size: 1rem;
+    }
+
+    .topics__list-title {
+        font-size: 1.25rem;
+    }
+
+    .topics__list-content__items {
+        align-items: flex-start;
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    .container__title {
+        font-size: 2.25rem;
+    }
+
+    .topics__list {
+        width: 50vw;
+        font-size: 1.25rem;
+    }
+
+    .topics__list-title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,126 @@
+@import "styles.css";
+
+main {
+    align-items: start;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.disciplines__list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.disciplines__li {
+    display: flex;
+    flex-flow: column;
+    padding: 0.5rem;
+    border: 2px solid #5e5e5e;
+    border-radius: 10px;
+    width: 250px;
+    height: 150px;
+    background-color: #EEE5E9;
+    box-shadow:  5px 5px 10px #c1c1c1;
+}
+
+.discipline__li-banner {
+    border-radius: 5px 5px 0 0;
+}
+
+.discipline__li-banner img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 2px 2px;
+}
+
+.discipline__li-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    padding-top: 5px;
+}
+
+.discipline-infos__title {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.button__menu {
+    cursor: pointer;
+    align-self: center;
+    border: none;
+    background: transparent;
+    display: flex;
+    padding: 0 0 0 50px;
+}
+
+.menu-list {
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    z-index: 10;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.button__menu.active + .menu-list {
+    display: block;
+}
+
+.menu-list__title {
+    text-align: center;
+    font-weight: 600;
+    padding-top: 0.5rem;
+}
+
+a {
+  color: black;
+}
+
+.menu-list__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.menu-list__item:hover {
+    background-color: #e3e3e3;
+}
+
+@media screen and (min-width: 641px) {
+    .disciplines__li {
+        width: 375px;
+        height: 225px;
+    }
+
+    .discipline-infos__title {
+        font-size: 1.2rem;
+    }
+
+    .menu-list {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1008px) {
+    .disciplines__list {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+
+    .disciplines__li {
+        width: 469px;
+        height: 281px;
+    }
+}

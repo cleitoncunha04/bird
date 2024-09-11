@@ -1,0 +1,227 @@
+@import "styles.css";
+
+*:not(dialog) {
+    font-family: var(--fonte), sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.open-modal {
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    background: var(--cor-destaque);
+    color: white;
+    font-weight: 700;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #606060;
+}
+
+dialog {
+    margin: auto;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    padding: 30px;
+    min-width: 30vw;
+    box-shadow: 5px 5px 10px #606060;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #5e5e5e;
+}
+
+.close-modal {
+    cursor: pointer;
+    border: none;
+    background: #cd1e1e;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: 0.2s;
+}
+
+.close-modal:hover {
+    transform: scale(0.9);
+    border-radius: 4px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group:not([data-file="true"]) {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: auto;
+    background-color: var(--cor-intermediaria);
+    box-shadow: 5px 5px 0 black;
+}
+
+.input-group:not([data-file="true"]) .material-symbols-outlined {
+    border-right: 2px solid black;
+    padding: 0 5px 0 0;
+    margin-right: 5px;
+    font-size: 24px; /* Ajuste de tamanho do ícone */
+}
+
+.input-group:not([data-file="true"]) input::placeholder {
+    color: black;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.input-group:not([data-file="true"]) input:focus {
+    outline: none;
+}
+
+.input-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #5e5e5e;
+}
+
+.input-group label[for="image"] {
+    margin: auto;
+    background: var(--cor-destaque);
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 5px 5px 0 black;
+    transition: 0.2s;
+}
+
+label[for="image"] .material-symbols-outlined {
+    border: none;
+    color: white;
+}
+
+label[for="image"]:hover {
+    transform: scale(0.9);
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.input-group input[type='file'] {
+    visibility: hidden;
+}
+
+#create_discipline-button {
+    all: unset;
+    background: var(--cor-fundo);
+    font-weight: 700;
+    color: black;
+    margin: auto;
+    width: 40%;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 1.125rem;
+    box-shadow: 5px 5px 0 black;
+    transition: 0.2s;
+}
+
+#create_discipline-button:hover {
+    transform: scale(0.9);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .input-group:not([data-file="true"]) input::placeholder {
+        font-size: 0.875rem;
+    }
+
+    #create_discipline-button {
+        width: 60%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    dialog {
+        min-width: 70vw;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+    .input-group:not([data-file="true"]) input::placeholder {
+        font-size: 0.75rem;
+    }
+
+    #create_discipline-button {
+        width: 70%;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    dialog {
+        min-width: 90vw;
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-size: 1.125rem;
+    }
+
+    .input-group:not([data-file="true"]) input::placeholder {
+        font-size: 0.625rem;
+    }
+
+    .input-group:not([data-file="true"]) {
+        padding: 0.5rem;
+    }
+
+    #create_discipline-button {
+        width: 80%;
+        font-size: 0.75rem;
+    }
+}
+
