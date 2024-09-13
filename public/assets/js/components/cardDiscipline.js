@@ -22,7 +22,7 @@ export function buildCard(discipline) {
     $liDisciplines.innerHTML = `
             
             <div class="discipline__li-banner">
-                <a href="http://localhost:8080/topics?=discipline_id=${discipline.id}" target="_blank">
+                <a href="/topics-discipline?discipline_id=${discipline.id}">
                 <img src="${discipline.banner_image}" alt="Banner da disciplina: ${discipline.name}">
                 </a>
             </div>

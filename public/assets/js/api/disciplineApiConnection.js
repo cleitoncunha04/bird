@@ -3,7 +3,7 @@ async function getData() {
     return await connection.json();
 }
 
-export const connectionApi = {
+export const disciplineApiConnection = {
     getData,
 }
 

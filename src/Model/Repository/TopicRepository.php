@@ -3,6 +3,7 @@
 namespace Cleitoncunha\Bird\Model\Repository;
 
 use Cleitoncunha\Bird\Model\Entity\Discipline;
+use Cleitoncunha\Bird\Model\Entity\Topic;
 use InvalidArgumentException;
 use PDO;
 use PDOStatement;
@@ -21,10 +22,11 @@ readonly class TopicRepository implements RepositoryInterface
         return $this->pdo->prepare($sqlQuery);
     }
 
+    /** @return Topic[] */
     private function hydrateUsers(PDOStatement $statement): array
     {
         return array_map(function ($topic) {
-            return new Discipline(
+            return new Topic(
                 id: $topic['topic_id'],
                 name: $topic['topic_name']
             );
@@ -51,6 +53,25 @@ readonly class TopicRepository implements RepositoryInterface
         return $this->hydrateUsers($statement);
     }
 
+    public function findByName(string $name): array
+    {
+        $statement = $this->preparedStatment('SELECT * FROM topics WHERE topic_name = :name');
+
+        $statement->execute([':name' => $name]);
+
+        return $this->hydrateUsers($statement);
+    }
+
+    public function addTopicInDiscipline(int $topicId, int $disciplineId): bool
+    {
+        $statement = $this->preparedStatment("INSERT INTO disciplines_has_topics (discipline_id, topic_id) VALUES (:discipline_id, :topic_id)");
+
+        $statement->bindValue(':discipline_id', $disciplineId, PDO::PARAM_INT);
+        $statement->bindValue(':topic_id', $topicId, PDO::PARAM_INT);
+
+        return $statement->execute();
+    }
+
     private function addTopic(Topic $topic): bool
     {
         $statement = $this->preparedStatment("INSERT INTO topics (topic_name) VALUES (:topic_name)");
@@ -74,7 +95,7 @@ readonly class TopicRepository implements RepositoryInterface
         if (!$object instanceof Topic) {
             throw new InvalidArgumentException('$object must be an instance of Topic');
         } else {
-            if ($object->id === null) {
+            if ($object->id === 0) {
                 return $this->addTopic($object);
             } else {
                 return $this->updateTopic($object);

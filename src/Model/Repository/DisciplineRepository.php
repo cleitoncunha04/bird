@@ -3,6 +3,7 @@
 namespace Cleitoncunha\Bird\Model\Repository;
 
 use Cleitoncunha\Bird\Model\Entity\Discipline;
+use Cleitoncunha\Bird\Model\Entity\Topic;
 use InvalidArgumentException;
 use PDO;
 use PDOStatement;
@@ -55,6 +56,53 @@ readonly class DisciplineRepository implements RepositoryInterface
         return $this->hydrateUsers($statement);
     }
 
+    /** @return Discipline[] */
+    public function findDisciplinesWithTopics(): array
+    {
+        $statement = $this->preparedStatment("
+        SELECT 
+            d.discipline_id, 
+            d.discipline_name, 
+            d.banner_image,
+            t.topic_id, 
+            t.topic_name
+        FROM 
+            bird.disciplines d
+        INNER JOIN 
+            bird.disciplines_has_topics dht ON d.discipline_id = dht.discipline_id
+        INNER JOIN 
+            bird.topics t ON dht.topic_id = t.topic_id;
+    ");
+
+        $statement->execute();
+
+        $disciplines = [];
+
+        foreach ($statement->fetchAll() as $disciplineWithTopicsData) {
+            // Verifica se a disciplina já existe no array
+            if (!array_key_exists($disciplineWithTopicsData['discipline_id'], $disciplines)) {
+                // Cria uma nova disciplina se ela ainda não existir
+                $disciplines[$disciplineWithTopicsData['discipline_id']] = new Discipline(
+                    id: $disciplineWithTopicsData['discipline_id'],
+                    name: $disciplineWithTopicsData['discipline_name'],
+                    bannerImage: $disciplineWithTopicsData['banner_image'],
+                );
+            }
+
+            // Cria o tópico e adiciona à disciplina
+            $topic = new Topic(
+                id: $disciplineWithTopicsData['topic_id'],
+                name: $disciplineWithTopicsData['topic_name'],
+            );
+
+            // Adiciona o tópico à disciplina
+            $disciplines[$disciplineWithTopicsData['discipline_id']]->addTopics($topic);
+        }
+
+        return $disciplines;
+    }
+
+
     private function addDiscipline(Discipline $discipline): bool
     {
         $statement = $this->preparedStatment("INSERT INTO disciplines (discipline_name, banner_image) VALUES (:discipline_name, :banner_image)");
@@ -78,9 +126,9 @@ readonly class DisciplineRepository implements RepositoryInterface
             SET 
                 discipline_name = :discipline_name
                 $updateBannerImageSql
-                WHERE 
-                    discipline_id = :id
-            ");
+            WHERE 
+                discipline_id = :id
+        ");
 
         $statement->bindValue(':discipline_name', $discipline->name, PDO::PARAM_STR);
         $statement->bindValue(':id', $discipline->id, PDO::PARAM_INT);

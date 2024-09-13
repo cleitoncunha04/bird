@@ -2,23 +2,18 @@
 
 namespace Cleitoncunha\Bird\Controller;
 
-use League\Plates\Engine;
 use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-readonly class TopicsListController implements RequestHandlerInterface
+class LogoutController implements RequestHandlerInterface
 {
-    public function __construct(
-        private Engine $templates
-    )
-    {
-    }
-
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        return new Response(status: 302, body: $this->templates->render('vw_topics'));
+        unset ($_SESSION['logged']);
+
+        return new Response(302, ['Location' => '/login']);
     }
 }

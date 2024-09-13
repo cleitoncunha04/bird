@@ -72,7 +72,7 @@ readonly class DisciplineSaveController implements RequestHandlerInterface
         }
 
         if (!$this->disciplineRepository->save($discipline)) {
-            $this->addErrorMessage("Error saving connectionApi.");
+            $this->addErrorMessage("Error saving disciplineApiConnection.");
         }
 
         return new Response(302, ['Location' => '/']);

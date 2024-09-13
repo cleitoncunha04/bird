@@ -29,6 +29,10 @@ session_set_cookie_params(
 
 session_start();
 
+if (!isset($_SESSION['previous_url'])) {
+    $_SESSION['previous_url'] = '/';
+}
+
 session_regenerate_id(true);
 
 $isAuthRoute = in_array($pathInfo, ['/login', '/signup']);

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const currentUrl = window.location.pathname; // Captura o caminho da URL atual (sem domínio)
+    const currentUrl = window.location.pathname; // pega URL (sem o domínio)
 
     const $itemsMenu = document.querySelectorAll("#side_items li a");
 
@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Captura o caminho do href de cada link
         const linkPath = new URL(item.href).pathname;
 
-        // Verifica se o caminho da URL atual corresponde exatamente ao caminho do link
-        if (currentUrl === linkPath) {
+        if (currentUrl === linkPath || (currentUrl.includes("/topics-discipline") && linkPath === "/topics")) {
             item.parentElement.classList.add('active');
         } else {
             item.parentElement.classList.remove('active');

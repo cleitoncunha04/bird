@@ -1,13 +1,16 @@
 class Accordion {
     constructor(accordionListQuestions) {
-        this.accordionListQuestions = document.querySelectorAll(accordionListQuestions);
-
+        this.accordionListQuestionsSelector = accordionListQuestions;
         this.activeItemClass = "active";
+    }
+
+    // Atualiza a lista de elementos após o conteúdo dinâmico ser carregado
+    updateAccordionListQuestions() {
+        this.accordionListQuestions = document.querySelectorAll(this.accordionListQuestionsSelector);
     }
 
     toggleAccordion(question) {
         question.classList.toggle(this.activeItemClass);
-
         question.nextElementSibling.classList.toggle(this.activeItemClass);
     }
 
@@ -17,8 +20,10 @@ class Accordion {
         });
     }
 
-
     init() {
+        // Reatualiza os elementos toda vez que o init é chamado
+        this.updateAccordionListQuestions();
+
         if (this.accordionListQuestions.length) {
             this.addAccordionEvent();
         }
@@ -27,7 +32,5 @@ class Accordion {
     }
 }
 
-const accordion = new Accordion('.topics__list-title');
-
-accordion.init();
-
+// Exportando a instância da classe Accordion
+export const accordion = new Accordion('.topics__list-title');

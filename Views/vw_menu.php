@@ -48,7 +48,7 @@
             </li>
 
             <li class="side-item active">
-                <a href="http://localhost:8080/">
+                <a href="/">
                     <i class="fa-solid fa-house"></i>
 
                     <span class="item-description">
@@ -58,7 +58,7 @@
             </li>
 
             <li class="side-item">
-                <a href="http://localhost:8080/topics">
+                <a href="/topics">
                     <i class="fa-solid fa-book"></i>
 
                     <span class="item-description">
@@ -84,13 +84,13 @@
     </div>
 
     <div id="logout">
-        <button id="logout_btn">
+        <a href="/logout" id="logout_btn">
             <i class="fa-solid fa-right-from-bracket"></i>
 
             <span class="item-description">
                 Logout
             </span>
-        </button>
+        </a>
     </div>
 </nav>
 

@@ -1,16 +1,12 @@
-<?php
-$this->layout('vw_menu');
-?>
+//TODO call files of the topic
+export function buildCard(topic) {
+    const $section = document.createElement("section");
 
-<link rel="stylesheet" href="/assets/css/topics.css">
+    $section.classList.add("topics");
 
-<main class="container">
-    <h1 class="container__title">Linguagem de Programação II</h1>
-
-    <section class="topics">
+    $section.innerHTML = `
         <dl class="topics__list">
-
-            <dt class="topics__list-title">Orientação a Objetos</dt>
+            <dt class="topics__list-title">${topic.name}</dt>
 
             <dd class="topics__list-content">
                 <div>
@@ -41,10 +37,8 @@ $this->layout('vw_menu');
                     </ul>
                 </div>
             </dd>
-
-
         </dl>
-    </section>
+    `;
 
-    <script src="/assets/js/widgets/topicsAccordionList.js"></script>
-</main>
+    return $section;
+}

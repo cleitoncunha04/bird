@@ -83,7 +83,7 @@
 
             <input
                     type="password"
-                    name="senha"
+                    name="password"
                     placeholder="Informe sua senha..."
                     id="idSenha"
                     class="formLogin__textField__input"

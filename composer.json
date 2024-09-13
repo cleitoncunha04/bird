@@ -21,6 +21,7 @@
         "psr/http-server-handler": "^1.0",
         "psr/container": "^2.0",
         "php-di/php-di": "^7.0",
-        "league/plates": "^3.5"
+        "league/plates": "^3.5",
+      "ext-mbstring": "*"
     }
 }

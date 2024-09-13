@@ -1,5 +1,8 @@
 <?php
 
+use Cleitoncunha\Bird\Model\Entity\Discipline;
+use Cleitoncunha\Bird\Model\Repository\DisciplineRepository;
+
 $this->layout('vw_menu');
 
 /**
@@ -83,4 +86,4 @@ $this->layout('vw_menu');
     </dialog>
 </main>
 
-<script src="/assets/js/main.js" type="module"></script>
+<script src="/assets/js/mainDiscipline.js" type="module"></script>

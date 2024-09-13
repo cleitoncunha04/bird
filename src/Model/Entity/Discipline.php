@@ -8,6 +8,8 @@ class Discipline
         public readonly int    $id,
         public readonly string $name,
         private ?string $bannerImage = "banner-teste-2.jpg",
+        /** @var Topic[] */
+        private array $topics = []
     )
     {
     }
@@ -19,5 +21,15 @@ class Discipline
 
     public function getBannerImage():  ?string {
         return $this->bannerImage;
+    }
+
+    public function addTopics(Topic $topic): void
+    {
+        $this->topics[] = $topic;
+    }
+
+    public function getTopics(): array
+    {
+        return $this->topics;
     }
 }

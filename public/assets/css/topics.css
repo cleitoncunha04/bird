@@ -6,7 +6,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-
+    justify-content: flex-start;
 }
 
 .container__title {
@@ -34,12 +34,7 @@
     border-bottom: 1px solid #5e5e5e;
     font-weight: 600;
     color: #434343;
-    font-size: 1rem;
-}
-
-.material-symbols-outlined {
-    border-radius: 50% !important;
-    border: 1px solid #5e5e5e !important;
+    font-size: 0.9rem;
 }
 
 .topics__list-title::after {
@@ -59,7 +54,6 @@
 .topics__list-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
 .topics__list-content > div {
