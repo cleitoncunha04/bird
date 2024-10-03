@@ -1,0 +1,219 @@
+@import "styles.css";
+
+.hidden {
+    display: none !important;
+}
+
+#modal-all_topics {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background: white;
+    box-shadow: 5px 5px 10px rgba(168, 168, 168, 0.6);
+    padding: 15px 8px;
+    border-radius: 10px;
+    min-width: 40vw;
+}
+
+#modal-all_topics form {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+}
+
+.modal-all_topics-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topics-header_tittle {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #5e5e5e;
+    min-width: 200px;
+}
+
+.topics-header_close-modal {
+    border: none;
+    background: #dc2626;
+    padding: 2px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.topics-header_close-modal > .material-symbols-outlined {
+    color: white;
+    font-size: 1rem;
+}
+
+.modal-all_topics-body {
+    width: 100%;
+    font-size: 0.7rem;
+}
+
+.topics-body_list {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 5px;
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+
+.topics-body_list .list_item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background: var(--cor-fundo);
+    padding: 6px 5px 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #5e5e5e;
+    color: #434343;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.topics-body_list .list_item:hover {
+    background: var(--cor-intermediaria);
+}
+
+.topics-body_list .list_item-add-topic {
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    background: var(--cor-destaque);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    transition: all 0.5s;
+    box-shadow: 2px 2px 0 black;
+}
+
+.topics-body_list .list_item:hover .list_item-add-topic {
+    transform: scale(0.9);
+}
+
+.topics-body_list .list_item .material-symbols-outlined {
+    font-size: 1rem;
+}
+
+.modal-all_topics-button__new-topic {
+    border: none;
+    background: #154324;
+    padding: 8px;
+    color: white;
+    border-radius: 5px;
+    align-self: end;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 2px 2px 0 black;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.modal-all_topics-button__new-topic:hover {
+    background: #2c5e39;
+    transform: scale(0.9);
+}
+
+.open-modal-all-topics {
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    background: var(--cor-destaque);
+    color: white;
+    font-weight: 700;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #606060;
+}
+
+@media screen and (min-width: 641px) {
+    .topics-header_tittle {
+        font-size: 1rem;
+        width: 400px;
+    }
+
+    .topics-header_close-modal > .material-symbols-outlined {
+        font-size: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .topics-body_list {
+        font-size: 0.8rem;
+        gap: 10px;
+        padding: 10px 5px;
+    }
+
+    .topics-body_list .list_item {
+        border: 2px solid #5e5e5e;
+        box-shadow: 3px 3px 5px rgba(168, 168, 168, 0.6);
+    }
+
+    .topics-body_list .list_item .material-symbols-outlined {
+        font-size: 1.25rem;
+    }
+
+    .topics-body_list .list_item .material-symbols-outlined {
+        font-size: 1rem;
+    }
+
+    .modal-all_topics-button__new-topic {
+        padding: 8px 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-right: 5px;
+        font-size: 0.9rem;
+        box-shadow: 3px 3px 0 black;
+    }
+}
+
+@media screen and (min-width: 1008px) {
+    #modal-all_topics {
+        padding: 15px;
+    }
+
+    .topics-header_tittle {
+        font-size: 1.25rem;
+        width: 600px;
+    }
+
+    .topics-header_close-modal > .material-symbols-outlined {
+        font-size: 1.75rem;
+        border-radius: 10px;
+    }
+
+    .topics-body_list .list_item {
+        font-size: 1rem;
+        padding: 9px 8px 11px 10px;
+    }
+
+    .topics-body_list .list_item .material-symbols-outlined {
+        font-size: 1.5rem;
+    }
+
+    .modal-all_topics-button__new-topic {
+        padding: 12px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-right: 14px;
+        font-size: 1rem;
+        box-shadow: 4px 4px 0 black;
+    }
+}
+
+

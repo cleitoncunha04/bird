@@ -13,10 +13,21 @@ $this->layout('vw_menu');
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 
+<link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="stylesheet" href="/assets/css/modal.css">
 <link rel="stylesheet" href="/assets/css/disciplines.css">
 
 <main>
+    <?php if (isset($_SESSION['error_message'])) : ?>
+
+        <h2 class="formulario__mensagem-erro">
+            <?php echo $_SESSION['error_message'];
+
+            unset($_SESSION['error_message']) ?>
+        </h2>
+
+    <?php endif; ?>
+
     <ul class="disciplines__list">
     </ul>
 

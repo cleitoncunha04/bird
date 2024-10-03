@@ -9,6 +9,8 @@ export async function listDisciplines() {
     try {
         const disciplines = await disciplineApiConnection.getData();
 
+        console.log ('Foi');
+
         disciplines.forEach((discipline) => {
             const $li = buildCard(discipline);
 
@@ -23,5 +25,7 @@ export async function listDisciplines() {
         window.addEventListener('resize', redimensionMenuIcon);
     } catch (error) {
         $ulDisciplines.innerHTML = error.message;
+
+        console.log ('Não foi');
     }
 }

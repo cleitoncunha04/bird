@@ -42,6 +42,14 @@ readonly class DisciplineSaveController implements RequestHandlerInterface
             name: $name
         );
 
+        $alreadyExists = $this->disciplineRepository->findByName($name);
+
+        if (count($alreadyExists) > 0) {
+            $this->addErrorMessage('Discipline already exists.');
+
+            return new Response(302, ['Location' => '/']);
+        }
+
         $files = $request->getUploadedFiles();
 
         /** @var UploadedFileInterface $uploadedImage */

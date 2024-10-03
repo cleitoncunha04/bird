@@ -53,6 +53,16 @@
     <form id="formCadastro" method="post">
         <h1>Criar conta</h1>
 
+        <?php if (isset($_SESSION['error_message'])) : ?>
+
+            <h2 class="formulario__mensagem-erro">
+                <?php echo $_SESSION['error_message'];
+
+                unset($_SESSION['error_message']) ?>
+            </h2>
+
+        <?php endif; ?>
+
         <div class="formCadastro__textField">
             <span class="material-symbols-outlined">person</span>
 

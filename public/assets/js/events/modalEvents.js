@@ -20,7 +20,7 @@ $openButtons.forEach((button) => {
 
         const isCreateAction = !button.closest('.edit-option');
         if (isCreateAction) {
-            clearFormFields();  // Limpa os campos sempre ao adicionar nova disciplina
+            clearFormFields();
         }
 
         $modal.showModal();

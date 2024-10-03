@@ -18,3 +18,24 @@ body {
     height: 100vh;
     font-family: var(--fonte), sans-serif;
 }
+
+.formulario__mensagem-erro {
+    color: #cd1e1e;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+@media screen  and (min-width: 641px){
+    .formulario__mensagem-erro {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1008px){
+    .formulario__mensagem-erro {
+        font-size: 1.7rem;
+    }
+}

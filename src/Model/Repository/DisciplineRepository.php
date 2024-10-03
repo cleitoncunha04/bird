@@ -102,6 +102,16 @@ readonly class DisciplineRepository implements RepositoryInterface
         return $disciplines;
     }
 
+    public function findByName(string $name): array
+    {
+        $statement = $this->preparedStatment("SELECT * FROM disciplines WHERE discipline_name = :name");
+
+        $statement->bindValue(':name', $name, PDO::PARAM_STR);
+
+        $statement->execute();
+
+        return $this->hydrateUsers($statement);
+    }
 
     private function addDiscipline(Discipline $discipline): bool
     {

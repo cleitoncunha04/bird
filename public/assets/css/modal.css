@@ -166,7 +166,6 @@ label[for="image"]:hover {
     transform: scale(0.9);
 }
 
-/* Media Queries */
 @media (max-width: 1024px) {
     .modal-title {
         font-size: 1.5rem;
