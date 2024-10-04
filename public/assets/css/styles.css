@@ -19,6 +19,10 @@ body {
     font-family: var(--fonte), sans-serif;
 }
 
+main {
+    overflow-y: auto;
+}
+
 .formulario__mensagem-erro {
     color: #cd1e1e;
     font-weight: bold;

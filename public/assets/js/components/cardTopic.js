@@ -6,6 +6,10 @@ export function buildCard(topic) {
 
     $section.innerHTML = `
         <dl class="topics__list">
+            <button class="topics__list__edit-bt">
+                <span class="material-symbols-outlined">edit</span>
+            </button>
+         
             <dt class="topics__list-title">${topic.name}</dt>
 
             <dd class="topics__list-content">

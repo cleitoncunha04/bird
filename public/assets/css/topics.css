@@ -25,6 +25,10 @@
     font-weight: 500;
 }
 
+.topics__list__edit-bt {
+
+}
+
 .topics__list-title {
     padding: 20px 30px;
     display: flex;
@@ -44,7 +48,7 @@
     height: 20px;
     background: url("../images/close_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg");
     transform: rotate(45deg);
-    transition: 0.25s;
+    transition: all 0.25s;
 }
 
 .topics__list-title.active::after {

@@ -8,8 +8,6 @@ const listTopicsLi = async () =>  {
     try {
         const topicsData = await topicApi.getTopics();
 
-        console.log(topicsData);
-
         topicsData.forEach((topic) => {
             const $li = buildTopicsLi(topic);
 
@@ -48,10 +46,4 @@ $closeModalBts.forEach((button) => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        await listTopicsLi();
-    } catch (error) {
-        console.error("Error:", error);
-    }
-})
+export default listTopicsLi;

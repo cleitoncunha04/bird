@@ -67,6 +67,7 @@ main {
 .formulario__mensagem-erro {
   color: #cd1e1e;
   font-weight: bold;
+  position: static !important;
 }
 
 .formCadastro__textField {

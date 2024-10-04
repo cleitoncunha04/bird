@@ -41,7 +41,7 @@ $_SESSION['previous_url'] = $_SERVER['REQUEST_URI'];
             </div>
         </form>
 
-        <button class="modal-all_topics-button__new-topic" data-modal="modal-1">Novo tema</button>
+        <button class="modal-all_topics-button__new-topic modal-bt" data-modal="modal-1">Novo tema</button>
     </dialog>
 
     <dialog id="modal-1">

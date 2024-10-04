@@ -12,7 +12,7 @@ export function selectModal(button) {
     return document.getElementById(modalId);
 }
 
-const $openButtons = document.querySelectorAll('.open-modal');
+const $openButtons = document.querySelectorAll('.modal-bt');
 
 $openButtons.forEach((button) => {
     button.addEventListener('click', () => {

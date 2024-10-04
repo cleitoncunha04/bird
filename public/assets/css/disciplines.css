@@ -2,7 +2,7 @@
 
 main {
     align-items: start;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100vh;
 }
 

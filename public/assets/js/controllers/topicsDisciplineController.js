@@ -7,7 +7,6 @@ const $containerTitle = document.querySelector('.container__title');
 
 export async function listTopicsDiscipline(disciplineId) {
     try {
-        // Obtém os dados da conexão
         const topicsData = await topicApi.getTopicsOfDiscipline(disciplineId);
 
         const discipline = topicsData[disciplineId];
@@ -16,14 +15,13 @@ export async function listTopicsDiscipline(disciplineId) {
 
         const topics = discipline.topics;
 
-        // Itera sobre os tópicos e constrói os cards
         topics.forEach((topic) => {
-            const $section = buildCard(topic); // Passa cada tópico para buildCard
-            $containerTopics.appendChild($section); // Adiciona o card no container
+            const $section = buildCard(topic);
+            $containerTopics.appendChild($section);
         });
     } catch (error) {
         const $h2 = document.createElement("h2");
-        $h2.textContent = `Error on loading topics: ${error.message}`;
+        $h2.textContent = `Não há temas anexados a esta disciplina`;
         $containerTopics.appendChild($h2);
     }
 }

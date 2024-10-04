@@ -64,7 +64,7 @@
     flex-flow: column;
     align-items: flex-start;
     gap: 5px;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 40vh;
 }
 

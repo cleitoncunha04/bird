@@ -31,7 +31,7 @@ $this->layout('vw_menu');
     <ul class="disciplines__list">
     </ul>
 
-    <button class="open-modal" data-modal="modal-1">
+    <button class="open-modal modal-bt" data-modal="modal-1">
         <i class="fa-solid fa-plus"></i>
     </button>
 

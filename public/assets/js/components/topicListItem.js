@@ -3,16 +3,13 @@ const buildTopicsLi = (topic) => {
 
     $li.classList.add('list_item');
 
-    $li.innerHTML = `
-            <li class="list_item">
-                <span class="list_item-name">${topic.name}</span>
+    $li.innerHTML = `<span class="list_item-name">${topic.name}</span>
 
-                <button class="list_item-add-topic">
+                <a class="list_item-add-topic" href='http://localhost:8080/save-existent-topic?id=${topic.id}'>
                     <span class="material-symbols-outlined">
                         add
                     </span>
-                </button>
-            </li>`;
+                </a>`;
 
     return $li;
 };

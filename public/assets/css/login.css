@@ -62,15 +62,17 @@ main {
   font-weight: 700;
   text-align: center;
   margin: 20px;
+  position: relative;
 }
 
 #formLogin .desktop {
   display: none;
+  position: relative;
 }
 
 .formulario__mensagem-erro {
   color: #cd1e1e;
-  font-weight: bold;
+  position: static !important;
 }
 
 .formLogin__textField {

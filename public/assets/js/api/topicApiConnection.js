@@ -1,5 +1,5 @@
-async function getTopics() {
-    let connection = await fetch("http://localhost:8080/topics-json");
+async function getTopics(paramsUrl) {
+    let connection = await fetch(`http://localhost:8080/topics-json?${paramsUrl}`);
 
     return await connection.json();
 }
