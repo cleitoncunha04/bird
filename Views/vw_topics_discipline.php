@@ -74,7 +74,7 @@ $_SESSION['previous_url'] = $_SERVER['REQUEST_URI'];
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Informe o nome da disciplina"
+                            placeholder="Informe o nome do tópico"
                             value=""
                             required
                     >
@@ -86,7 +86,66 @@ $_SESSION['previous_url'] = $_SERVER['REQUEST_URI'];
             </div>
         </form>
     </dialog>
+
+    <dialog id="modal-files">
+        <form
+                action="/save-file"
+                method="post"
+                enctype="multipart/form-data"
+        >
+            <input type="hidden" id="topic-id" name="topic_id" value="">
+
+            <div class="modal-header">
+                <h1 class="modal-title">Adicionar arquivo</h1>
+
+                <button
+                        class="close-modal"
+                        data-modal="modal-files"
+                        type="button"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="material-symbols-outlined">
+                        folder_special
+                    </span>
+
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Informe o nome do arquivo"
+                            value=""
+                            required
+                    >
+                </div>
+
+                <div class="input-group" data-file="true">
+                    <label for="file">
+                        Arquivo
+
+                        <span class="material-symbols-outlined">
+                            download
+                        </span>
+                    </label>
+
+                    <input
+                            type="file"
+                            id="file"
+                            name="file"
+                            accept="*/*"
+                    >
+                </div>
+
+                <button id="create_discipline-button">
+                    Salvar
+                </button>
+            </div>
+        </form>
+    </dialog>
 </main>
 
 <script src="/assets/js/mainTopicDiscipline.js" type="module"></script>
-<script src="/assets/js/events/modalAllTopicsEvent.js" type="module"></script>

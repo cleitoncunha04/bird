@@ -111,7 +111,7 @@ dialog::backdrop {
     color: #5e5e5e;
 }
 
-.input-group label[for="image"] {
+.input-group label[for="image"],  .input-group label[for="file"] {
     margin: auto;
     background: var(--cor-destaque);
     border-radius: 15px;
@@ -122,15 +122,16 @@ dialog::backdrop {
     justify-content: center;
     padding: 1rem;
     box-shadow: 5px 5px 0 black;
-    transition: 0.2s;
+    transition: all 0.3s;
+    border: 2px solid black;
 }
 
-label[for="image"] .material-symbols-outlined {
+label[for="image"] .material-symbols-outlined, label[for="file"] .material-symbols-outlined {
     border: none;
     color: white;
 }
 
-label[for="image"]:hover {
+label[for="image"]:hover, label[for="file"]:hover {
     transform: scale(0.9);
 }
 
@@ -159,7 +160,8 @@ label[for="image"]:hover {
     border: 2px solid black;
     font-size: 1.125rem;
     box-shadow: 5px 5px 0 black;
-    transition: 0.2s;
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 #create_discipline-button:hover {

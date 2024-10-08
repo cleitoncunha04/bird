@@ -2,12 +2,24 @@
 
 namespace Cleitoncunha\Bird\Model\Entity;
 
-readonly class Topic
+class Topic
 {
     public function __construct(
-        public int    $id,
-        public string $name,
-    )
+        public readonly int    $id,
+        public readonly string $name,
+        /** @var File[] */
+        private array $files = []
+    ) {
+    }
+
+    public function addFiles(File $file): void
     {
+        $this->files[] = $file;
+    }
+
+    /** @return File[] */
+    public function getFiles(): array
+    {
+        return $this->files;
     }
 }

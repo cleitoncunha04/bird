@@ -59,7 +59,7 @@ readonly class DisciplinesTopicsToJsonController implements RequestHandlerInterf
                 return new Response(
                     404,
                     ['Content-Type' => 'application/json'],
-                    json_encode(['error' => 'Disciplina não encontrada'])
+                    json_encode(['error' => 'Not found disciplines'])
                 );
             }
         }

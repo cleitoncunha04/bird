@@ -54,9 +54,9 @@ class TopicSaveController implements RequestHandlerInterface
         }
 
         if ($topic->id === 0) {
-            $topicResearchead = $this->topicRepository->findByName($topicName)[0];
+            $topicResearched  = $this->topicRepository->findByName($topic->name)[0];
 
-           $this->topicRepository->addTopicInDiscipline($topicResearchead->id, $disciplineId);
+           $this->topicRepository->addTopicInDiscipline($topicResearched->id, $disciplineId);
         }
 
         return new Response(302, ['Location' => $previousUrl]);

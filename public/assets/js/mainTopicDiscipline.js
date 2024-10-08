@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         await listTopicsDiscipline(disciplineId);
 
         accordion.init();
-
-        await listTopicsLi();
     } catch (error) {
         console.error("Error initializing topics or accordion:", error);
     }

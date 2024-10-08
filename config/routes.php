@@ -1,23 +1,23 @@
 <?php
 
 
-use Cleitoncunha\Bird\Controller\{
-    AddExistentTopicInDisiciplineController,
+use Cleitoncunha\Bird\Controller\{AddExistentTopicInDisiciplineController,
     DisciplineListController,
     DisciplineRemoveController,
     DisciplineSaveController,
     DisciplineToJsonController,
+    FileSaveController,
     LoginController,
     LoginFormController,
     LogoutController,
     SignupController,
     SignupFormController,
     TopicListController,
+    TopicRemoveController,
     TopicSaveController,
     TopicsListDisciplineController,
     DisciplinesTopicsToJsonController,
-    TopicToJsonController
-};
+    TopicToJsonController};
 
 return [
     'GET|/login' => LoginFormController::class,
@@ -35,4 +35,6 @@ return [
     'GET|/topics-json' => TopicToJsonController::class,
     'GET|/topics' => TopicListController::class,
     'GET|/save-existent-topic' => AddExistentTopicInDisiciplineController::class,
+    'GET|/remove-topic' => TopicRemoveController::class,
+    'POST|/save-file' => FileSaveController::class,
 ];

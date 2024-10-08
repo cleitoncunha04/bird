@@ -139,6 +139,7 @@ span.eye-password {
   margin: 15px;
   border: 2px solid black;
   font-size: 1.125rem;
+  transition: all 0.3s;
 }
 
 .material-symbols-outlined {
@@ -194,12 +195,12 @@ span.eye-password {
     text-align: center;
     align-self: self-end;
     margin-top: 15px;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.219);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.219);
+    transition: all 0.3s;
   }
 
   .loginLogo__alinhamento__texto a:hover {
     transform: scale(1.1);
-    transition: all 0.2s;
   }
 
   .formulario__mensagem-erro {
@@ -231,12 +232,11 @@ span.eye-password {
 
   #btEntrar {
     padding: 20px;
-    box-shadow: 5px 5px 0px black;
+    box-shadow: 5px 5px 0 black;
   }
 
   #btEntrar:hover {
     transform: scale(1.1);
-    transition: all 0.2s;
   }
 
   .formLogin__links a {

@@ -24,11 +24,18 @@ const listTopicsLi = async () =>  {
 
 const $openAllTopicsBts = document.querySelectorAll('.open-modal-all-topics');
 
-$openAllTopicsBts.forEach((button) => {
-    button.addEventListener('click', () => {
+$openAllTopicsBts.forEach((button)  =>  {
+    button.addEventListener('click', async ()  => {
+        const topicsData = await topicApi.getTopics();
+
+        if (topicsData.length === 0) {
+            button.setAttribute('data-modal', 'modal-1');
+            button.classList.add('modal-bt');
+        }
+
         const $modal = selectModal(button);
 
-        $modal.classList.toggle('hidden');
+        $modal.classList.remove('hidden');
 
         $modal.showModal();
     });

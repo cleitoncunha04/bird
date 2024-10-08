@@ -1,38 +1,53 @@
-const $disciplineNameInput = document.getElementById('name');
-const $disciplineIdInput = document.querySelector('input[name="id"]');
+const $modalTitle = document.querySelector('.modal-title');
+const $nameInput = document.getElementById('name');
+const $idInput = document.querySelector('input[name="id"]');
 
 function clearFormFields() {
-    $disciplineNameInput.value = '';
-    $disciplineIdInput.value = '';
+    $nameInput.value = '';
+    $idInput.value = '';
 }
 
 export function selectModal(button) {
     const modalId = button.getAttribute('data-modal');
-
     return document.getElementById(modalId);
 }
 
-const $openButtons = document.querySelectorAll('.modal-bt');
+export function addEvtListener(){
+    const $openButtons = document.querySelectorAll('.modal-bt');
 
-$openButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        const $modal = selectModal(button);
+    $openButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const $modal = selectModal(button);
 
-        const isCreateAction = !button.closest('.edit-option');
-        if (isCreateAction) {
-            clearFormFields();
-        }
+            if (button.hasAttribute('data-name')) {
+                $modalTitle.textContent = "Editar:";
 
-        $modal.showModal();
+                $idInput.value = button.getAttribute('data-id');
+
+                $nameInput.value = button.getAttribute('data-name');
+            } else {
+                $modalTitle.textContent = "Criar:";
+
+                clearFormFields();
+
+                if ($modal.getAttribute('id') === 'modal-files') {
+                    $modal.querySelector('#topic-id').value = button.getAttribute('data-id');
+                }
+            }
+
+            $modal.showModal();
+        });
     });
-});
+}
+
+
+
 
 const $closeButtons = document.querySelectorAll('.close-modal');
 
 $closeButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const $modal = selectModal(button);
-
         $modal.close();
     });
 });

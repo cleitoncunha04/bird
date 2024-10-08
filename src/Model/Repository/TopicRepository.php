@@ -85,9 +85,10 @@ readonly class TopicRepository implements RepositoryInterface
     {
         $statement = $this->preparedStatment("UPDATE topics SET topic_name = :topic_name WHERE topic_id = :id");
 
-        return $statement->execute([
-            ':topic_name' => $topic->name,
-        ]);
+        $statement->bindValue(':topic_name', $topic->name, PDO::PARAM_STR);
+        $statement->bindValue(':id', $topic->id, PDO::PARAM_INT);
+
+        return $statement->execute();
     }
 
     public function save(object $object): bool

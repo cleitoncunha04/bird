@@ -6,14 +6,39 @@ export function buildCard(topic) {
 
     $section.innerHTML = `
         <dl class="topics__list">
-            <button class="topics__list__edit-bt">
-                <span class="material-symbols-outlined">edit</span>
-            </button>
-         
             <dt class="topics__list-title">${topic.name}</dt>
 
             <dd class="topics__list-content">
                 <div>
+                    <ul class="topics__list-content__options">
+                        <li class="options-item">
+                            <button
+                                id="add-file" 
+                                class="options-item__bt edit-option modal-bt" 
+                                data-modal="modal-files" data-id="${topic.id}"> 
+                                
+                                <span class="material-symbols-outlined">add</span>
+                            </button>
+                        </li>
+                    
+                        <li class="options-item">
+                            <button class="options-item__bt edit-option modal-bt" 
+                                    data-modal="modal-1" 
+                                    data-id="${topic.id}" 
+                                    data-name="${topic.name}"
+                                    data-tooltip="Editar tópico"> 
+                                    
+                                <span class="material-symbols-outlined">edit</span>
+                            </button>
+                        </li>
+                        
+                        <li class="options-item">
+                            <a class="options-item__bt" href="http://localhost:8080/remove-topic?id=${topic.id}">
+                                <span class="material-symbols-outlined">delete</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
                     <ul class="topics__list-content__items">
                         <li class="content-item">
                             <a

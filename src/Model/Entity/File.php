@@ -5,8 +5,9 @@ namespace Cleitoncunha\Bird\Model\Entity;
 readonly class File
 {
     public function __construct(
-        public readonly int $id,
-        public readonly string $name,
+        public int $id,
+        public string $name,
+        public int $topicId,
     )
     {
     }
