@@ -3,6 +3,7 @@
 namespace Cleitoncunha\Bird\Model\Repository;
 
 use Cleitoncunha\Bird\Model\Entity\Discipline;
+use Cleitoncunha\Bird\Model\Entity\File;
 use Cleitoncunha\Bird\Model\Entity\Topic;
 use InvalidArgumentException;
 use PDO;
@@ -13,6 +14,7 @@ readonly class TopicRepository implements RepositoryInterface
 {
     public function __construct(
         private PDO $pdo,
+        private FileRepository $fileRepository,
     )
     {
     }
@@ -26,10 +28,16 @@ readonly class TopicRepository implements RepositoryInterface
     private function hydrateUsers(PDOStatement $statement): array
     {
         return array_map(function ($topic) {
-            return new Topic(
+            $topic = new Topic(
                 id: $topic['topic_id'],
                 name: $topic['topic_name']
             );
+
+            foreach ($this->fileRepository->findByTopicId($topic->id) as $file) {
+                $topic->addFiles($file);
+            }
+
+            return $topic;
         }, $statement->fetchAll());
     }
 

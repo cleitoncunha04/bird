@@ -21,12 +21,14 @@ readonly class FileRepository implements RepositoryInterface
         return $this->pdo->prepare($sqlQuery);
     }
 
+    /** @return File[] */
     private function hydrateUsers(PDOStatement $statement): array
     {
         return array_map(function ($file) {
             return new File(
                 id: $file['file_id'],
-                name: $file['file_name'],
+                name: $file['name'],
+                fileName: $file['file_name'],
                 topicId: $file['topic_id'],
             );
         }, $statement->fetchAll());
@@ -47,14 +49,28 @@ readonly class FileRepository implements RepositoryInterface
 
         $statement->bindParam(':id', $id, PDO::PARAM_INT);
 
+        $statement->execute();
+
+        return $this->hydrateUsers($statement);
+    }
+
+    public function findByTopicId(int $topicId): array
+    {
+        $statement = $this->preparedStatement('SELECT * FROM files WHERE topic_id = :id');
+
+        $statement->bindValue(':id', $topicId, PDO::PARAM_INT);
+
+        $statement->execute();
+
         return $this->hydrateUsers($statement);
     }
 
     private function addFile(File $file): bool
     {
-        $statement = $this->preparedStatement('INSERT INTO files (file_name, topic_id) VALUES (:file_name, :topic_id)');
+        $statement = $this->preparedStatement('INSERT INTO files (name, file_name, topic_id) VALUES (:name, :file_name, :topic_id)');
 
-        $statement->bindValue(':file_name', $file->name, PDO::PARAM_STR);
+        $statement->bindValue(':name', $file->name, PDO::PARAM_STR);
+        $statement->bindValue(':file_name', $file->fileName, PDO::PARAM_STR);
         $statement->bindValue(':topic_id', $file->topicId, PDO::PARAM_INT);
 
         return $statement->execute();
@@ -62,12 +78,7 @@ readonly class FileRepository implements RepositoryInterface
 
     private function updateFile(File $file): bool
     {
-        $statement = $this->preparedStatement('UPDATE files SET file_name = :file_name WHERE id = :id');
-
-        $statement->bindValue(':file_name', $file->name, PDO::PARAM_STR);
-        $statement->bindValue(':id', $file->id, PDO::PARAM_INT);
-
-        return $statement->execute();
+        return true;
     }
 
     public function save(object $object): bool
@@ -85,7 +96,7 @@ readonly class FileRepository implements RepositoryInterface
 
     public function remove(int $id): bool
     {
-        $statement = $this->preparedStatement('DELETE FROM files WHERE id = :id');
+        $statement = $this->preparedStatement('DELETE FROM files WHERE file_id = :id');
 
         $statement->bindValue(':id', $id, PDO::PARAM_INT);
 

@@ -49,7 +49,8 @@ readonly class FileSaveController implements RequestHandlerInterface
 
             $file = new File(
                 id: 0,
-                name: $safeFileName,
+                name: $fileName,
+                fileName: $safeFileName,
                 topicId: $topicId
             );
 

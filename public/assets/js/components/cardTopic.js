@@ -1,4 +1,6 @@
 //TODO call files of the topic
+import buildFile from "./cardFile.js";
+
 export function buildCard(topic) {
     const $section = document.createElement("section");
 
@@ -40,34 +42,18 @@ export function buildCard(topic) {
                     </ul>
                     
                     <ul class="topics__list-content__items">
-                        <li class="content-item">
-                            <a
-                                    href="https://www.youtube.com/watch?v=u5hge87rCCQ"
-                                    target="_blank">
-                                Conheça a propriedade <strong>readonly</strong> do PHP
-                            </a>
-                        </li>
-
-                        <li class="content-item">
-                            <a
-                                    href="https://www.youtube.com/watch?v=u5hge87rCCQ"
-                                    target="_blank">
-                                Conheça a propriedade <strong>readonly</strong> do PHP
-                            </a>
-                        </li>
-
-                        <li class="content-item">
-                            <a
-                                    href="https://www.youtube.com/watch?v=u5hge87rCCQ"
-                                    target="_blank">
-                                Conheça a propriedade <strong>readonly</strong> do PHP
-                            </a>
-                        </li>
+                        
                     </ul>
                 </div>
             </dd>
         </dl>
     `;
+
+    const $ulFiles = $section.querySelector('.topics__list-content__items');
+
+    topic.files.forEach((file) => {
+        $ulFiles.appendChild(buildFile(file));
+    });
 
     return $section;
 }

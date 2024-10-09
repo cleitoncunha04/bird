@@ -6,6 +6,7 @@ use Cleitoncunha\Bird\Controller\{AddExistentTopicInDisiciplineController,
     DisciplineRemoveController,
     DisciplineSaveController,
     DisciplineToJsonController,
+    FileRemoveController,
     FileSaveController,
     LoginController,
     LoginFormController,
@@ -37,4 +38,5 @@ return [
     'GET|/save-existent-topic' => AddExistentTopicInDisiciplineController::class,
     'GET|/remove-topic' => TopicRemoveController::class,
     'POST|/save-file' => FileSaveController::class,
+    'GET|/remove-file' => FileRemoveController::class,
 ];

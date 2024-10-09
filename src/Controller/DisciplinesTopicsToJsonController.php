@@ -42,6 +42,13 @@ readonly class DisciplinesTopicsToJsonController implements RequestHandlerInterf
                         return [
                             'id' => $topic->id,
                             'name' => $topic->name,
+                            'files' => array_map(function ($file) {
+                                return [
+                                    'id' => $file->id,
+                                    'name' => $file->name,
+                                    'file_name' => '/assets/files/uploads/' . $file->fileName
+                                ];
+                            }, $topic->getFiles())
                         ];
                     }, $discipline->getTopics())
                 ];

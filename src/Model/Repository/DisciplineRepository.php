@@ -3,6 +3,7 @@
 namespace Cleitoncunha\Bird\Model\Repository;
 
 use Cleitoncunha\Bird\Model\Entity\Discipline;
+use Cleitoncunha\Bird\Model\Entity\File;
 use Cleitoncunha\Bird\Model\Entity\Topic;
 use InvalidArgumentException;
 use PDO;
@@ -94,6 +95,23 @@ readonly class DisciplineRepository implements RepositoryInterface
                 id: $disciplineWithTopicsData['topic_id'],
                 name: $disciplineWithTopicsData['topic_name'],
             );
+
+            $statement = $this->preparedStatment("SELECT * FROM files WHERE topic_id = :id");
+
+            $statement->bindValue(':id', $topic->id, PDO::PARAM_INT);
+
+            $statement->execute();
+
+            foreach ($statement->fetchAll() as $fileData) {
+                $file = new File(
+                    id: $fileData['file_id'],
+                    name: $fileData['name'],
+                    fileName: $fileData['file_name'],
+                    topicId: $fileData['topic_id'],
+                );
+
+                $topic->addFiles($file);
+            }
 
             // Adiciona o tópico à disciplina
             $disciplines[$disciplineWithTopicsData['discipline_id']]->addTopics($topic);
