@@ -40,7 +40,7 @@ A ideia é que somente professores do campus tenham acesso a estes materiais, en
 ## Instalando as dependências:
 
 - Após baixar o arquivo zipado ou fazer o `git-clone` , abra sua `IDE` de preferência ou navegue até a pasta do projeto via terminal
-- Execute os comandos abaixo:
+- Execute os comandos abaixo no terminal:
 
     ```
     composer install 
