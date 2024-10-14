@@ -1,3 +1,5 @@
+# BIRD (Base Institucional de Recursos Acadêmicos)
+
 ## Descrição do projeto:
 
 Projeto que servirá como Trabalho de Conclusão de Curso (TCC), com o intuito de criar um repositório de materiais acadêmicos para os professores do IFSP Campus Capivari. Nele a ideia é que os docentes criem disciplinas e anexem temas a elas. Cada tema (ou tópico) terá arquivos vinculados a ela, que estarão disponíveis para download.
