@@ -10,12 +10,8 @@ export async function listDisciplines() {
     try {
         const disciplines = await disciplineApiConnection.getData();
 
-        console.log ('Foi');
-
         disciplines.forEach((discipline) => {
             const $li = buildCard(discipline);
-
-            console.log($li);
 
             $ulDisciplines.appendChild($li);
         });

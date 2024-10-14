@@ -7,6 +7,8 @@ export async function listTopics() {
     try {
         const topicsData = await topicApi.getTopics();
 
+        console.log(topicsData);
+
         topicsData.forEach((topic) => {
             const $section = buildCard(topic);
 

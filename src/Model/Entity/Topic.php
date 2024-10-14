@@ -8,7 +8,7 @@ class Topic
         public readonly int    $id,
         public readonly string $name,
         /** @var File[] */
-        private array $files = []
+        private ?array $files = []
     ) {
     }
 

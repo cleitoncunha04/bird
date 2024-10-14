@@ -38,12 +38,12 @@ class TopicSaveController implements RequestHandlerInterface
 
         $topic = new Topic(
             $topicId,
-            $topicName
+            $topicName,
         );
 
         $alreadyExists = $this->topicRepository->findByName($topic->name);
 
-        if (count($alreadyExists) > 0) {
+        if (count($alreadyExists) > 0 && $topic->id == 0) {
             $this->addErrorMessage("Topic already exists");
 
             return new Response(302, ['Location' => $previousUrl]);
@@ -56,7 +56,7 @@ class TopicSaveController implements RequestHandlerInterface
         if ($topic->id === 0) {
             $topicResearched  = $this->topicRepository->findByName($topic->name)[0];
 
-           $this->topicRepository->addTopicInDiscipline($topicResearched->id, $disciplineId);
+            $this->topicRepository->addTopicInDiscipline($topicResearched->id, $disciplineId);
         }
 
         return new Response(302, ['Location' => $previousUrl]);
