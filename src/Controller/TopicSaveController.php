@@ -30,10 +30,12 @@ class TopicSaveController implements RequestHandlerInterface
 
         $previousUrl = $_SESSION['previous_url'];
 
-        $disciplineId = (int) mb_substr($previousUrl, -1);
+        parse_str(parse_url($previousUrl, PHP_URL_QUERY), $params);
+
+        $disciplineId = (int) $params['discipline_id'] ?? null;
 
         if (!$topicName) {
-            $this->addErrorMessage("Invalid Topic Name");
+            $this->addErrorMessage("Nome inválido para o tema");
         }
 
         $topic = new Topic(
@@ -44,13 +46,13 @@ class TopicSaveController implements RequestHandlerInterface
         $alreadyExists = $this->topicRepository->findByName($topic->name);
 
         if (count($alreadyExists) > 0 && $topic->id == 0) {
-            $this->addErrorMessage("Topic already exists");
+            $this->addErrorMessage("Tema já existe");
 
             return new Response(302, ['Location' => $previousUrl]);
         }
 
         if (!$this->topicRepository->save($topic)) {
-            $this->addErrorMessage("Error saving Topic");
+            $this->addErrorMessage("Erro ao salvar o tema");
         }
 
         if ($topic->id === 0) {

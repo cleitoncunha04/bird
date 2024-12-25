@@ -38,15 +38,15 @@ readonly class SignupController implements RequestHandlerInterface
         $confirmPassword = filter_var($queryParams['confirmPassword']);
 
         if ($confirmPassword !== $password) {
-            return $this->redirectWithError("The passwords do not match");
+            return $this->redirectWithError("As senhas não são iguais");
         }
 
         if (!$this->userRepository->isValidEmail($email)) {
-            return $this->redirectWithError("Email doesn't valid");
+            return $this->redirectWithError("E-mail inválido");
         }
 
         if ($this->userRepository->isUserAlreadyRegistered($email)) {
-            return $this->redirectWithError("Email already registered");
+            return $this->redirectWithError("E-mail já cadastrado");
         }
 
         $hashedPassword = password_hash($password, PASSWORD_ARGON2ID);
@@ -60,7 +60,7 @@ readonly class SignupController implements RequestHandlerInterface
         );
 
         if (!$this->userRepository->save($newUser)) {
-            return $this->redirectWithError("Error creating user");
+            return $this->redirectWithError("Erro ao criar o usuário");
         }
 
         return new Response(302, ['Location' => '/login']);

@@ -9,4 +9,4 @@ $this->layout('vw_menu');
 
 </main>
 
-<script src="/assets/js/mainTopic.js" type="module"></script>
+<script src="/assets/js/mainTopicWithoutOptions.js" type="module"></script>

@@ -29,7 +29,7 @@ readonly class DisciplineRemoveController implements RequestHandlerInterface
         $id = filter_var($queryParams['id'], FILTER_SANITIZE_NUMBER_INT);
 
         if (!$id) {
-            $this->addErrorMessage("Invalid discipline ID");
+            $this->addErrorMessage("ID da disciplina inválido");
         } else {
             $discipline = $this->disciplineRepository->findById($id)[0];
 
@@ -42,7 +42,7 @@ readonly class DisciplineRemoveController implements RequestHandlerInterface
             }
 
             if (!$this->disciplineRepository->remove($id)) {
-                $this->addErrorMessage("Failed to remove discipline");
+                $this->addErrorMessage("Erro ao remover a disciplina");
             }
         }
 

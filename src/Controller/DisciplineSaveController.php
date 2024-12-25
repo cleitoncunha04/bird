@@ -32,7 +32,7 @@ readonly class DisciplineSaveController implements RequestHandlerInterface
         $name = htmlspecialchars($queryParams['name'], ENT_QUOTES, 'UTF-8');
 
         if (!$name) {
-            $this->addErrorMessage('Field "name" is required.');
+            $this->addErrorMessage('Campo "nome" é obrigatório.');
 
             return new Response(302, ['Location' => '/']);
         }
@@ -45,7 +45,7 @@ readonly class DisciplineSaveController implements RequestHandlerInterface
         $alreadyExists = $this->disciplineRepository->findByName($name);
 
         if (count($alreadyExists) > 0) {
-            $this->addErrorMessage('Discipline already exists.');
+            $this->addErrorMessage('Disciplina já existe.');
 
             return new Response(302, ['Location' => '/']);
         }
@@ -80,7 +80,7 @@ readonly class DisciplineSaveController implements RequestHandlerInterface
         }
 
         if (!$this->disciplineRepository->save($discipline)) {
-            $this->addErrorMessage("Error saving disciplineApiConnection.");
+            $this->addErrorMessage("Erro ao salvar essa disciplina.");
         }
 
         return new Response(302, ['Location' => '/']);

@@ -45,13 +45,15 @@ readonly class LoginController implements RequestHandlerInterface
             }
 
             $_SESSION['logged'] = true;
+            $_SESSION['username'] = $user->username;
+            $_SESSION['user_level'] = $user->level == 1 ? 'Docente' : 'Administrador';
 
             sleep(1);
 
             return new Response(302, ['Location' => '/']);
         }
 
-        $this->addErrorMessage('Wrong email or password');
+        $this->addErrorMessage('E-mail ou senha inválidos');
 
         return new Response(302, ['Location' => '/login']);
     }

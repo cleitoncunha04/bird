@@ -1,6 +1,5 @@
 <?php
 
-
 use Cleitoncunha\Bird\Controller\{AddExistentTopicInDisiciplineController,
     DisciplineListController,
     DisciplineRemoveController,

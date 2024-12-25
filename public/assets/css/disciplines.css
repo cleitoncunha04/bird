@@ -27,6 +27,7 @@ main {
 }
 
 .discipline__li-banner {
+    height: 80%;
     border-radius: 5px 5px 0 0;
 }
 

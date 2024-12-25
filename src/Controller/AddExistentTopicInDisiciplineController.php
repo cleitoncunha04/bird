@@ -33,12 +33,12 @@ readonly class AddExistentTopicInDisiciplineController implements RequestHandler
         $topic = $this->topicRepository->findById($topicId)[0];
 
         if (!$topic) {
-            $this->addErrorMessage('Topic not found');
+            $this->addErrorMessage('Tema não encontrado');
         } else {
             try {
                 $this->topicRepository->addTopicInDiscipline($topic->id, $displineId);
             } catch (PDOException $e) {
-                $this->addErrorMessage('Discipline already has pinned this topic');
+                $this->addErrorMessage('Disciplina já anexou esse tema');
             }
         }
 

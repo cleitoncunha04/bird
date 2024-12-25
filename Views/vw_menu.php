@@ -26,13 +26,13 @@
             <img src="/assets/images/perfil-img.png" alt="Avatar" id="user_avatar">
 
             <p id="user__infos">
-                    <span class="item-description">
-                        Cleiton Cunha
-                    </span>
+                <span class="item-description">
+                    <?= $_SESSION['username'] ?>
+                </span>
 
                 <span class="item-description">
-                        Professor
-                    </span>
+                    <?= $_SESSION['user_level'] ?>
+                </span>
             </p>
         </div>
 

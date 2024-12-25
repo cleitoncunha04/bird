@@ -27,7 +27,7 @@ readonly class TopicRemoveController implements RequestHandlerInterface
         $previousUrl = $_SESSION['previous_url'];
 
         if (!$this->topicRepository->remove($topicId)) {
-            $this->addErrorMessage('Failed to remove topic');
+            $this->addErrorMessage('Erro ao remover o tema');
         }
 
         return new Response(302, ['Location' => $previousUrl]);

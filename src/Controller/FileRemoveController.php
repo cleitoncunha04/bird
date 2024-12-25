@@ -39,10 +39,10 @@ readonly class FileRemoveController implements RequestHandlerInterface
             }
 
             if (!$this->fileRepository->remove($id)) {
-                $this->addErrorMessage('Error on deleting file');
+                $this->addErrorMessage('Erro ao excluir o arquivo');
             }
         } else {
-            $this->addErrorMessage('Error on deleting file');
+            $this->addErrorMessage('Erro ao excluir o arquivo');
         }
 
         return new Response(302, ['Location' => $previousUrl]);

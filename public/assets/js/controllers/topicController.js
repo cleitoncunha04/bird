@@ -3,14 +3,14 @@ import {buildCard} from "../components/cardTopic.js";
 
 const $containerTopics = document.querySelector(".container");
 
-export async function listTopics() {
+export async function listTopics(isOption = true) {
     try {
         const topicsData = await topicApi.getTopics();
 
         console.log(topicsData);
 
         topicsData.forEach((topic) => {
-            const $section = buildCard(topic);
+            const $section = buildCard(topic, isOption);
 
             $containerTopics.appendChild($section)
         });

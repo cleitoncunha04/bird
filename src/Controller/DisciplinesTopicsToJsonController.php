@@ -3,7 +3,9 @@
 namespace Cleitoncunha\Bird\Controller;
 
 use Cleitoncunha\Bird\Model\Entity\Discipline;
-use Cleitoncunha\Bird\Model\Entity\Topic;  // Supondo que exista a entidade Topic
+use Cleitoncunha\Bird\Model\Entity\Topic;
+
+// Supondo que exista a entidade Topic
 use Cleitoncunha\Bird\Model\Repository\DisciplineRepository;
 use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;

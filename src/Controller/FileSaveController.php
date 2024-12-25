@@ -58,7 +58,7 @@ readonly class FileSaveController implements RequestHandlerInterface
                 $uploadedFile->moveTo(__DIR__ . '/../../public/assets/files/uploads/' . $safeFileName);
             }
         } else {
-            $this->addErrorMessage('Error uploading file');
+            $this->addErrorMessage('Erro ao adicionar o arquivo');
         }
 
         return new Response(302, ['Location' => $previousUrl]);

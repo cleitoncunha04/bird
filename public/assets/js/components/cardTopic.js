@@ -1,8 +1,11 @@
-//TODO call files of the topic
 import buildFile from "./cardFile.js";
 
-export function buildCard(topic) {
+export function buildCard(topic, isOption = true) {
     const $section = document.createElement("section");
+
+    if (!isOption) {
+        return buildCardWithoutOptions(topic);
+    }
 
     $section.classList.add("topics");
 
@@ -41,6 +44,34 @@ export function buildCard(topic) {
                         </li>
                     </ul>
                     
+                    <ul class="topics__list-content__items">
+                        
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+    `;
+
+    const $ulFiles = $section.querySelector('.topics__list-content__items');
+
+    topic.files.forEach((file) => {
+        $ulFiles.appendChild(buildFile(file));
+    });
+
+    return $section;
+}
+
+export function buildCardWithoutOptions(topic) {
+    const $section = document.createElement("section");
+
+    $section.classList.add("topics");
+
+    $section.innerHTML = `
+        <dl class="topics__list">
+            <dt class="topics__list-title">${topic.name}</dt>
+
+            <dd class="topics__list-content">
+                <div>
                     <ul class="topics__list-content__items">
                         
                     </ul>
